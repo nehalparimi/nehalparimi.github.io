@@ -5,7 +5,7 @@
     border-right: 0.15em solid black;
     animation: 
         typing 3s steps(40),
-        blink-cursor 0.5s step-end infinite;
+        blink-cursor 0.75s step-end infinite;
 }
 
 
