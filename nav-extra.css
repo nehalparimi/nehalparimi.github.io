@@ -18,10 +18,10 @@
 }
 
 .banner-underline-scroll {
-    -ms-transform: skew(-20deg) scaleY(0.5) translateY(-0.5em) !important;
-    -moz-transform: skew(-20deg) scaleY(0.5) translateY(-0.5em) !important;
-    -o-transform: skew(-20deg) scaleY(0.5) translateY(-0.5em) !important;
-    transform: skew(-20deg) scaleY(0.5) translateY(-0.5em) !important;
+    -ms-transform: translateY(-0.5em) scaleY(0.5) skew(-20deg) !important;
+    -moz-transform: translateY(-0.5em) scaleY(0.5) skew(-20deg) !important;
+    -o-transform: translateY(-0.5em) scaleY(0.5) skew(-20deg) !important;
+    transform: translateY(-0.5em) scaleY(0.5) skew(-20deg) !important;
     margin-top: -2.3em !important;
 }
 
