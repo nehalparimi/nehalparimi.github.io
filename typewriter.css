@@ -1,0 +1,28 @@
+.slogan:first-child {
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    border-right: 0.15em solid black;
+    animation: 
+        typing 3s steps(40),
+        blink-cursor 0.5s step-end infinite;
+}
+
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+    to {
+        width: 80%
+    }
+}
+
+@keyframes blink-cursor {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #000;
+    }
+}

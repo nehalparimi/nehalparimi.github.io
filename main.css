@@ -17,6 +17,9 @@ body * + * {
     margin-top: 1.5em;
 }
 
+main > * {
+    background-color: #fff;
+}
 /* ===== Nav Styles ===== */
 .header-container {
     display: flex;
@@ -25,7 +28,7 @@ body * + * {
 }
 
 #banner {
-    transform: perspective(230px) rotateY(14deg);
+    transform: perspective(200px) rotateY(14deg);
     padding-left: 2em;
     
 }
@@ -42,7 +45,7 @@ body * + * {
     background-color: red;
     margin: 0;
     width: 100%;
-    margin-top: -2.3em;
+    margin-top: -2.4em;
     z-index: -1;
     opacity: 0.80;
 }
@@ -77,12 +80,19 @@ body * + * {
     content: '';
     display: block;
     position: absolute;
-    height: 0.5em;
+    height: 0.8em;
     width: 0;
     left: -0.1em;
     bottom: 0.03em;
     background-color: rgb(255, 0, 0);
     transition: width ease 0.2s;
+    transform: rotate(-12deg);
+}
+
+/* Experimental */
+.nav-list li:last-child > a::after {
+    transform: rotate(-9deg);
+    background-color: rgb(255, 0, 0);
 }
 
 .nav-list a:hover::after {
@@ -94,12 +104,37 @@ body * + * {
 /* ===== Layout and Section Styles ===== */
 .section-front {
     height: 110vh;
-    border-bottom: 1px solid rgb(197, 111, 111);
 }
 
 .section-front > div {
     text-align: center;
-    padding: 5em 0;
+    padding: 2.5em 0;
+}
+
+.section-front h2 {
+    letter-spacing: 0.05em;
+    text-transform: capitalize;
+    display: block;
+    font-weight: 600;
+    font-size: 3em;
+    margin: 0;
+    position: relative
+}
+
+.section-front:not([id=landing]):not([id=about]) h2 {
+    display: inline-block;
+}
+
+.section-front:not([id=landing]):not([id=about]) h2::after {
+    position: absolute;
+    content: "";
+    bottom: -1rem;
+    display: block;
+    background-color: red;
+    height: 0.5vh;
+    width: 75%;
+    left: 15%;
+    
 }
 
 .flex-container {
@@ -119,14 +154,13 @@ body * + * {
     margin-top: 2.5em;
 }
 
+
 .flex-container p {
     line-height: 1.4em;
 }
 
 .flex-container h2 {
     font-size: 3rem;
-
-    margin: 0;
 }
 
 .img-container {
@@ -137,8 +171,34 @@ body * + * {
     height: 400px;
     width: 400px;
     border-radius: 50%;
+    /* z-index only works when the position is relative */
+    position: relative;
+    z-index: 2;
 }
 
+/* ! Adjust */
+/* ----- Landing ----- */
+.background-texture {
+    background: radial-gradient(rgba(0, 0, 0, .08) 7%, transparent 8%),
+    radial-gradient(rgba(0, 0, 0, .08) 7%, transparent 8%),
+    transparent;
+    background-clip: border-box;
+    background-position: 0 0, 25px 25px;
+    background-origin: padding-box;
+    background-repeat: repeat;
+    background-size: 25px 25px;
+    bottom: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: transparent;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 12%;
+    width: 100%;
+    height: 110vh;
+}
 /* ----- About ----- */
 .about {
     height: 80vh;
@@ -155,18 +215,45 @@ body * + * {
     margin-top: 0;
 }
 
-.section-front h2 {
-    letter-spacing: 0.05em;
-    text-transform: capitalize;
-    display: block;
-    font-weight: 600;
-    font-size: 3em;
+.section-front.work h2 {
+    margin: 3rem 0 4rem;
 }
 
+.work-cards {
+    transition: box-shadow ease 0.4s;
+}
+
+.work-cards:hover {
+    box-shadow: 1px 2px 10px 8px rgb(238, 238, 238);
+}
+
+.work-cards > h4 {
+    margin: 1.8em 0 1em;
+    font-size: 1.4em;
+    letter-spacing: 0.1em;
+}
+
+.work-cards > p {
+    line-height: 1.5em;
+}
+
+/* Font Awesome */
+.work-cards > i {
+    color: red;
+    transform: scale(1.5);
+    margin-top: 1.5em;
+    box-sizing: border-box;
+}
 /* ----- News ----- */
 
 .news {
-    height: 90vh;
+    height: 100vh;
+    /* Because of transparent 'bug' */
+    margin-top: 0;
+}
+
+.section-front.news h2 {
+    margin: 3rem;
 }
 
 .news-flex {
@@ -175,33 +262,76 @@ body * + * {
 }
 
 .news .cards {
-    border: 1px solid rgba(209, 209, 209, 0.87);
+    border: 1px solid rgb(238, 237, 237);
+    margin: 0 0.8em;
+    height: fit-content;
+    width: 30%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.news .cards > div {
+    overflow: hidden;
+}
+
+.news .cards:hover > div img {
+    transform: scale(1.3);
+    transition: transform cubic-bezier(0, 0.4, 0.7, 1) 0.3s;
+    transform-origin: center;
+}
+
+.news .cards h4 {
+    font-size: 1.4em;
+}
+
+.news .cards > div {
+    text-align: left;
+    padding: 0.5em;
+}
+
+.news .cards > span {
+    display: flex;
+    border-top: 1px solid rgba(209, 209, 209, 0.87);
+    justify-content: space-between;
+    padding: 0.5em 0.75em;
+}
+
+.news .cards > span > span {
+    margin: 0.5rem;
+    text-align: center;
+}
+
+.news .cards > span > span > * {
+    display: inline;
+}
+
+.news .cards > span > span > i {
+    padding: 0.5rem;
+}
+
+.news .cards > span p {
     margin: 0;
-    padding: 0.5em 1em;
+}
+
+.news .cards div > img {
+    height: 60%;
+    width: 100%;
+    transition: transform cubic-bezier(0.075, 0.82, 0.165, 1) 0.8s;
+}
+
+.news .cards h4 {
+    margin: 0;
 }
 
 .news p {
-    margin: 3em auto;
+    margin: 1em auto 3em;
     text-align: center;
 }
 
 
 .news h2 {
     position: relative;
-}
-.news h2::after {
-    position: absolute;
-    content: "";
-    bottom: -20px;
-    left: 42.5%;
-    display: block;
-    background-color: red;
-    height: 2px;
-    width: 15vw;
-}
-
-.work-cards:not(:first-child) {
-    margin-left: 1em;
 }
 
 /* Cards */
@@ -217,36 +347,102 @@ body * + * {
     background-color: rgb(255, 255, 255);
     height: 35vh;
     padding: 0.5em 1em;
+    overflow: hidden;
 }
+
 /* ----- Contant or Footer ----- */
 .contact {
     bottom: 0;
-    height: 60vh;
-}
-
-.contact h4 {
-    font-size: 1.4em;
-}
-
-.contact h6 {
-    font-size: 1em;
+    height: 50vh;
+    /* Scroll effect was cool but adjusting z-index brought extra code -- not worth the workarounds */
+    /* position: sticky; */
+    background-color: rgb(250, 250, 250);
+    color: rgb(75, 75, 75);
+    position: relative;
 }
 
 .contact > div {
     display: flex;
-    padding: 1em 2em;
-    top: 50%;
-    position: sticky;
+    padding: 0.5em 4em;
+    justify-content: space-between;
+}
+
+.contact-container h4 {
+    font-size: 1.8em;
+    margin: 1em 0;
+    color: rgb(78, 78, 78);
+    
+}
+
+.contact-container h6 {
+    font-size: 1.3em;
+    margin: 1.5em 0;
+    color: rgb(75, 74, 74);
 }
 
 .contact-container {
     margin-top: 0;
-    border: 1px solid black;
+}
+
+.contact-container p {
+    line-height: 1.3em;
+    padding-left: 0.5em;
+}
+
+.newsletter-form {
+    /* display: flex; */
+    background-color: rgb(255, 255, 255);
+    display: inline-block;
+    border: 1px solid rgb(119, 119, 119);
+    border-radius: 6px;
+    margin-top: 0.5em;
+}
+
+.newsletter-form > input {
+    padding: 1em 2em;
+    margin: 0;
+    margin-left: 0.5rem;
+    border: none;
+    width: 20vw;
+    overflow: hidden;
+    color: rgb(138, 138, 138);
+    /* caret-color: transparent; */
+    position: relative;
+    /* font-size: 1.3rem; */
+}
+
+.newsletter-form > input::before {
+    display: block;
+    position: absolute;
+    content: "";
+    border-left: 1px solid #000;
+    height: 80%;
+    width: 100px;
+    background-color: black;
+
+}
+
+.newsletter-form > button {
+    background-color: rgba(255, 47, 47, 0.904);
+    color: white;
+    font-weight: 600;
+    border: 1px solid rgba(255, 47, 47, 0.904);
+    margin: 0.25em 0.25em;
+    padding: 1em 1.5em;
+    border-radius: 6px;
+    cursor: pointer;
+    
+}
+
+.newsletter-form > button:hover {
+    background-color: rgba(255, 74, 74, 0.904);
+    border: 1px solid rgba(255, 74, 74, 0.904);
 }
 
 #mission-statement {
     flex: 0.8;
     text-align: left;
+    
 }
 
 #contact-links {
@@ -257,31 +453,46 @@ body * + * {
     flex: 1;
 }
 
+#newsletter > div:first-child {
+    margin-bottom: 0.7em;
+    padding-left: 1.8em;
+}
+
+#newsletter h6 {
+    margin-bottom: 0.7em;
+    text-align: left;
+    margin-left: 1.5em;
+}
+
 #contact-links ul {
     list-style-type: none;
     padding-left: 0;
 }
 
-#contact-links ul > li:not(:first-child) {
-    margin: 0.5em 0;
+#contact-links ul > li + li {
+    margin: 1em 0;
 }
 
-/* 
-For experimental, helps the after stack under the element
-#experimental {
-    
-    position: relative;
-    z-index: 1;
+#contact-links a {
+    font-size: 1em;
+    color: rgb(75, 75, 75);
+    text-decoration: none;
 }
 
-#experimental::after {
-    content: " ";
+#contact-links a:hover {
+    color: rgb(134, 134, 134)
+}
+
+#copyright {
+    bottom: 0;
     position: absolute;
-    display: block;
-    height: 3vh;
-    background-color: red;
-    left: 40%;
-    width: 20%;
-    z-index: -1;
-    margin-top: -0.5em;
-}    */
+    width: 100%;
+    display: inline-block;
+    background-color: rgb(240, 240, 240);
+}
+
+#copyright > p {
+    color: rgb(138, 138, 138);
+    margin: 0;
+    padding: 0.8em 1.5em;
+}
