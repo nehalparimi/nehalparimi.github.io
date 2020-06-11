@@ -84,7 +84,7 @@ main > * {
     margin-left: 1.5em;
 }
 
-.nav-list a {
+.nav-link {
     font-size: 1.1em;
     color: #000;
     text-decoration: none;
@@ -94,7 +94,7 @@ main > * {
     z-index: inherit;
 }
 
-.nav-list a::after {
+.nav-link::after {
     content: '';
     display: block;
     position: absolute;
@@ -104,12 +104,12 @@ main > * {
     top: 0.55em;
     background-color: rgb(255, 0, 0);
     transition: width ease 0.3s;
-    transform: skew(-15deg);
+    transform: skew(-15deg) rotate(-5deg);
 }
 
 /* Experimental */
 .nav-list li:last-child > a::after {
-    transform: skew(-9deg);
+    transform: skew(-9deg) rotate(-4deg);
     background-color: rgb(255, 0, 0);
 }
 
@@ -517,6 +517,7 @@ main > * {
     width: 100%;
     display: inline-block;
     background-color: rgb(240, 240, 240);
+    text-align: center;
 }
 
 #copyright > p {

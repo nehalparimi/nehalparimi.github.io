@@ -1,11 +1,21 @@
-.slogan:first-child {
+.slogan {
     white-space: nowrap;
     overflow: hidden;
     display: inline-block;
-    border-right: 0.15em solid black;
     animation: 
         typing 3s steps(40),
         blink-cursor 0.75s step-end infinite;
+}
+
+.slogan::before {
+    display: block;
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #000;
 }
 
 

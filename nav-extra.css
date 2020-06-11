@@ -23,5 +23,14 @@
     -o-transform: skew(-20deg) scaleY(0.5) translateY(-0.5em) !important;
     transform: skew(-20deg) scaleY(0.5) translateY(-0.5em) !important;
     margin-top: -2.3em !important;
-
 }
+
+.boo {
+    transform: scale(1.1);
+}
+
+/* Work on this */
+/* .nav-link-scroll:hover::after {
+    transition: width ease 0.3s;
+    transform: rotate(0deg);
+} */
