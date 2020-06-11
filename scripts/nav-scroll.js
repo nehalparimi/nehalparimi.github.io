@@ -1,10 +1,7 @@
 (function navScroll() {
     let nav = document.querySelector('.nav-container');
     let banner = document.querySelector('.banner');
-    let bannerUnderline = document.getElementById('banner-underline');
-
-    // let navBelow = document.querySelector(['data-onScroll=true']);
-    // console.log(navBelow)
+    let bannerUnderline = document.querySelector('.banner-underline');
 
     document.addEventListener('scroll', function(e) {
         // console.log(nav.clientHeight);

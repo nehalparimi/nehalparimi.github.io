@@ -48,7 +48,7 @@ main > * {
     position: relative;
 }
 
-#banner-underline {
+.banner-underline {
     height: 1.5em;
     width: 3em;
     display: block;
@@ -92,13 +92,13 @@ main > * {
     content: '';
     display: block;
     position: absolute;
-    height: 0.75em;
+    height: 0.45em;
     width: 0;
     left: -0.1em;
-    top: 0.35em;
+    top: 0.55em;
     background-color: rgb(255, 0, 0);
     transition: width ease 0.3s;
-    transform: skew(-10deg);
+    transform: skew(-15deg);
 }
 
 /* Experimental */
