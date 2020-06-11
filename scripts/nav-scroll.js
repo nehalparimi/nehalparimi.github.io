@@ -7,12 +7,10 @@
         // console.log(nav.clientHeight);
         // check the client height part later
         if (document.documentElement.scrollTop > nav.clientHeight) {
-            nav.classList.add('nav-container-scroll');
             banner.classList.add('banner-scroll');
             bannerUnderline.classList.add('banner-underline-scroll');
         }
         else {
-            nav.classList.remove('nav-container-scroll');
             banner.classList.remove('banner-scroll');
             bannerUnderline.classList.remove('banner-underline-scroll');
         }

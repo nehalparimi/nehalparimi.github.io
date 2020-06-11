@@ -3,20 +3,25 @@
     top: 0;
     min-width: 100%;
     padding-bottom: 0.5em;
-    background-color: transparent;
-}
-
-.nav-container-scroll {
     z-index: 10;
     background-color: #fff;
 }
 
 .banner-scroll {
+    z-index: 10;
+    -ms-transform: perspective(200px) translate(-0.8em) rotateY(0);
+    -webkit-transform: perspective(200px) translate(-0.8em) rotateY(0);
+    -moz-transform: perspective(200px) translate(-0.8em) rotateY(0);
+    -o-transform: perspective(200px) translate(-0.8em) rotateY(0);
     transform: perspective(200px) translate(-0.8em) rotateY(0);
     padding-left: 1em;
 }
 
 .banner-underline-scroll {
+    -ms-transform: skew(-20deg) scaleY(0.5) translateY(-0.5em) !important;
+    -moz-transform: skew(-20deg) scaleY(0.5) translateY(-0.5em) !important;
+    -o-transform: skew(-20deg) scaleY(0.5) translateY(-0.5em) !important;
     transform: skew(-20deg) scaleY(0.5) translateY(-0.5em) !important;
     margin-top: -2.3em !important;
+
 }
