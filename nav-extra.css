@@ -7,7 +7,7 @@
 }
 
 .nav-container-scroll {
-    z-index: 100;
+    z-index: 10;
     background-color: #fff;
 }
 
