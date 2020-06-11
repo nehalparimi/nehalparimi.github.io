@@ -1,4 +1,9 @@
-.nav-container {
+.nav-container[data-onScroll=true] {
+    visibility: hidden;
+    margin-top: 0;
+}
+
+.nav-container-scroll {
     position: fixed;
     top: 0;
     min-width: 100%;
@@ -7,11 +12,12 @@
     background-color: #fff;
 }
 
-.banner-str {
+.banner-scroll {
     transform: perspective(200px) translate(-0.8em) rotateY(0);
     padding-left: 1em;
 }
 
-.banner-underline-str {
-    transform: scaleY(0.5) translateY(-0.5em) skew(-12deg);
+.banner-underline-scroll {
+    transform: scaleY(0.5) translateY(-0.5em) skew(-12deg) !important;
+    margin-top: -2.3em !important;
 }

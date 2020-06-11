@@ -1,21 +1,23 @@
 (function navScroll() {
-    let nav = document.getElementById('nav-container');
+    let nav = document.querySelector('.nav-container');
     let banner = document.querySelector('.banner');
-    let bannerUnderline = document.getElementById('banner-underline')
-    console.log(banner);
+    let bannerUnderline = document.getElementById('banner-underline');
+
+    // let navBelow = document.querySelector(['data-onScroll=true']);
+    // console.log(navBelow)
 
     document.addEventListener('scroll', function(e) {
-        console.log(document.documentElement.scrollTop);
-        
-        if (document.documentElement.scrollTop > 65) {
-            nav.classList.add('nav-container');
-            banner.classList.add('banner-str');
-            bannerUnderline.classList.add('banner-underline-str');
+        // console.log(nav.clientHeight);
+        // check the client height part later
+        if (document.documentElement.scrollTop > nav.clientHeight) {
+            nav.classList.add('nav-container-scroll');
+            banner.classList.add('banner-scroll');
+            bannerUnderline.classList.add('banner-underline-scroll');
         }
         else {
-            nav.classList.remove('nav-container');
-            banner.classList.remove('banner-str');
-            bannerUnderline.classList.remove('banner-underline-str');
+            nav.classList.remove('nav-container-scroll');
+            banner.classList.remove('banner-scroll');
+            bannerUnderline.classList.remove('banner-underline-scroll');
         }
     })
 })();
