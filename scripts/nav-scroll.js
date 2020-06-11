@@ -1,6 +1,6 @@
 (function navScroll() {
-    let nav = document.getElementById('xyz');
-    let banner = document.getElementById('banner');
+    let nav = document.getElementById('nav-container');
+    let banner = document.querySelector('.banner');
     let bannerUnderline = document.getElementById('banner-underline')
     console.log(banner);
 

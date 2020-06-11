@@ -8,9 +8,10 @@
 }
 
 .banner-str {
-    transform: perspective(200px) translate(-0.8em) rotateY(0) !important;
-    padding: 0 !important;
+    transform: perspective(200px) translate(-0.8em) rotateY(0);
+    padding: 0;
 }
 
 .banner-underline-str {
+    transform: scaleY(0.5) translateY(-0.5em) skew(-12deg);
 }

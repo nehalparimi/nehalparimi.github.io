@@ -36,14 +36,14 @@ main > * {
     padding: 0 1.5em;
 }
 
-#banner {
+.banner {
     transform: perspective(200px) rotateY(14deg);
     padding-left: 2em;
     transition: transform ease 0.35s;
     
 }
 
-#banner > h1 {
+.banner > h1 {
     z-index: 1;
     position: relative;
 }
@@ -58,7 +58,7 @@ main > * {
     margin-top: -2.4em;
     z-index: -1;
     opacity: 0.80;
-    transition: transform ease 0.2s;
+    transition: transform ease 0.4s;
 }
 
 .nav-list {
