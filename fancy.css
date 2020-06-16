@@ -1,6 +1,6 @@
 .landing .img-container > img {
-    animation-timing-function: linear;
-    animation: bounce 1.4s steps(5) infinite;
+    animation-timing-function: ease-in;
+    animation: bounce 1.8s steps(5) infinite;
 }
 
 @keyframes bounce {
