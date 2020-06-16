@@ -42,7 +42,7 @@ main > * {
     padding-left: 2em;
     transition: transform ease 0.35s;
     will-change: transform;
-    
+    cursor: pointer;
 }
 
 .banner > h1 {
@@ -115,6 +115,7 @@ main > * {
     transform: skew(-9deg) rotate(-4deg);
     background-color: rgb(255, 0, 0);
 }
+
 
 .nav-link:hover::after {
     width: 110%;
